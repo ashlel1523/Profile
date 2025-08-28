@@ -92,7 +92,7 @@
 
     .section {
       min-height: 100vh;
-      padding: 120px 60px 60px;
+      padding: 120px 30px 60px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -189,10 +189,6 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--section-bg);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      transition: border-color var(--transition-speed) ease;
     }
 
     .image {
@@ -293,22 +289,35 @@
     }
 
     .experience-left ul li {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.8;
       padding-left: 1.4em;
       position: relative;
       margin-bottom: 16px;
       font-weight: 600;
+      font-size: 18px; text-align: left; margin: 0;
     }
 
-    .experience-left ul li::before {
-      content: "✔";
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      top: 2px;
-      font-weight: 700;
-    }
+    .experience-left ul li {
+  position: relative;
+  padding-left: 50px; /* space for the image */
+  margin-bottom: 16px;
+}
+
+/* Default check image */
+.experience-left ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;    /* adjust size */
+  height: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
     .experience-right {
       display: flex;
@@ -490,6 +499,39 @@
   font-weight: 500;  /* lighter than bold for better readability */
 }
 
+.skill-card ul li {
+  position: relative;
+  padding-left: 28px; /* space for the image */
+  margin-bottom: 16px;
+}
+
+/* Default check image */
+.skill-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;    /* adjust size */
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.skill-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;    /* adjust size */
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
     .skill-card:hover {
       box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
@@ -511,7 +553,7 @@
       list-style: none;
       padding-left: 0;
     }
-
+    
     .skill-card ul li {
       font-size: 18px;
       line-height: 1.6;
@@ -520,23 +562,79 @@
       margin-bottom: 16px;
       transition: color var(--transition-speed) ease;
       font-weight: 600;
+      font-size: 18px; text-align: left; margin: 0;
+      
+       padding-left: 55px; /* space for the image + extra gap */
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center; /* vertically center image and text */
+  gap: 10px; /* horizontal space between image and text */
     }
-
     .skill-card ul li::before {
-      content: "✔";
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      top: 2px;
-      font-weight: 700;
-    }
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;       /* adjust size */
+  height: 35px;
+  background-size: contain;  /* scale without distortion */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Remove background-color so it stays transparent */
+  background-color: transparent; 
+}
+
+
+ .laptop::before {
+  background-image: url('logo/laptop.gif');
+  width: 20px;       /* image size */
+  height: 20px;
+  flex-shrink: 0;    /* keep image from shrinking */
+}
+
+.file::before {
+  background-image: url('logo/file.gif');
+}
+
+.time::before {
+  background-image: url('logo/time.gif');
+}
+
+.check::before {
+  background-image: url('logo/check.gif');
+}
+
+.heart::before {
+  background-image: url('logo/heart.gif');
+}
+
+.program::before {
+  background-image: url('logo/program.gif');
+}
+
+.smile::before {
+  background-image: url('logo/smile.gif');
+}
+
+.star::before {
+  background-image: url('logo/star.gif');
+}
+
+.process::before {
+  background-image: url('logo/process.gif');
+}
+
+.manage::before {
+  background-image: url('logo/manage.gif');
+}
 
     @media (max-width: 800px) {
       .skills-row {
         flex-direction: column;
         align-items: center;
         padding: 0 20px;
-        display: contents;
+        display: flex;
       }
 
       .skill-card {
@@ -584,9 +682,6 @@
       width: 100%;
       max-width: 400px;
       height: auto;
-      border-radius: var(--border-radius);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      transition: box-shadow var(--transition-speed) ease;
       cursor: pointer;
     }
 
@@ -801,18 +896,30 @@
     }
 
     .cert-front, .cert-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: 0 6px 16px var(--shadow-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backface-visibility: hidden;
-      padding: 24px;
-      background-color: var(--card-bg);
-    }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 16px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  padding: 16px;
+  background-color: var(--card-bg);
+  text-align: center;
+
+  /* ✅ keep text inside card */
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  /* ✅ add scrolling if content is too long */
+  overflow-y: auto;
+}
+
 
     .cert-front {
       color: var(--text);
@@ -822,6 +929,11 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       font-size: 20px;
+      font-size: clamp(14px, 2vw, 20px);
+      .cert-front {
+  line-height: 1.4;
+}
+
     }
 
     .cert-back {
@@ -962,3 +1074,60 @@
 }
 
     
+/* Apply to both certification and skill cards */
+.cert-front, .cert-back, .skill-card {
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0,0,0,0.2) transparent; /* subtle for Firefox */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on touch devices */
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+.cert-front::-webkit-scrollbar,
+.cert-back::-webkit-scrollbar,
+.skill-card::-webkit-scrollbar {
+  width: 6px; /* thin scrollbar */
+}
+
+/* ✅ Remove scrollbar arrows */
+.cert-front::-webkit-scrollbar-button,
+.cert-back::-webkit-scrollbar-button,
+.skill-card::-webkit-scrollbar-button {
+  display: none; /* removes the up/down arrows */
+}
+
+/* Track */
+.cert-front::-webkit-scrollbar-track,
+.cert-back::-webkit-scrollbar-track,
+.skill-card::-webkit-scrollbar-track {
+  background: transparent; /* invisible track */
+}
+
+/* Thumb */
+.cert-front::-webkit-scrollbar-thumb,
+.cert-back::-webkit-scrollbar-thumb,
+.skill-card::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2); /* subtle gray thumb */
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for better UX */
+.cert-front:hover::-webkit-scrollbar-thumb,
+.cert-back:hover::-webkit-scrollbar-thumb,
+.skill-card:hover::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.5); /* darker on hover */
+}
+
+/* Firefox support */
+body:not(.dark-mode) .cert-front:hover,
+body:not(.dark-mode) .cert-back:hover,
+body:not(.dark-mode) .skill-card:hover {
+  scrollbar-color: rgba(0,0,0,0.5) transparent;
+}
+
+body.dark-mode .cert-front:hover,
+body.dark-mode .cert-back:hover,
+body.dark-mode .skill-card:hover {
+  scrollbar-color: rgba(255,255,255,0.4) transparent;
+}
