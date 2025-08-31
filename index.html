@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+
+<!-- Modern Preloader -->
+<div id="preloader">
+  <img src="loading.gif" walt="Loading GIF" class="preloader-gif">
+  <div class="loading-dots"><span></span><span></span><span></span></div>
+</div>
+
+
 <body>
 
   <nav>
@@ -51,7 +59,7 @@
       <div class="social-links">
         <a href="https://github.com/ashlel1523" target="_blank" rel="noopener"><img src="logo/github.png"></a>
         <a href="mailto:ashleygonzales1523@gmail.com" target="_blank" rel="noopener"><img src="logo/gmail.png" alt="Gmail"></a>
-        <a href="https://linkedin.com/in/ashleymgonzales" target="_blank" rel="noopener"><img src="logo/linkedin.png"></a>
+        <a href="https://www.linkedin.com/in/ashley-gonzales-16a967375" target="_blank" rel="noopener"><img src="logo/linkedin.png"></a>
         <a href="https://www.facebook.com/ashley.marquez.gonzales" target="_blank" rel="noopener"><img src="logo/facebook.png"></a>
         <a href="https://www.instagram.com/shi_ash_ley?igsh=MXR6d3k3aHR1ZGpjag==" target="_blank" rel="noopener"><img src="logo/instagram.png"></a>
         <a href="https://raket.ph/ashleygonzales1523" target="_blank" rel="noopener noreferrer"><img src="logo/racket.webp" style="border-radius: 10%; height: 45px;"></a>
@@ -346,5 +354,16 @@
     link.addEventListener("click", () => {
       sidebar.style.width = "0";
     });
+  });
+
+  
+</script>
+<script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0"; // fade out
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 600); // match CSS transition
   });
 </script>
